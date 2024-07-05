@@ -1,0 +1,84 @@
+What is Data?
+Data is a collection of a distinct small unit of information. It can be used in a variety of forms like text, numbers, media, bytes, etc. it can be stored in pieces of paper or electronic memory, etc.
+
+Database
+A database is an organized collection of data, so that it can be easily accessed and managed.
+
+You can organize data into tables, rows, columns, and index it to make it easier to find relevant information.
+
+
+
+
+
+
+
+A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table.
+
+
+
+
+
+
+
+
+CREATE TABLE myapp_person (
+    
+    "first_name" varchar(30) NOT NULL,
+    "last_name" varchar(30) NOT NULL
+);
+
+
+
+
+
+from django.db import models
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+
+
+home.html
+{% load static %}
+
+<img src='{% static 'portfolio/.jpg' %}'>
+
+
+<a href="{% static 'portfolio/resume.pdf' %}">Resume</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.sqlite3
+1. sqlviewer
+2. project and blog
+
+staticfiles
+
+1. static_url
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
