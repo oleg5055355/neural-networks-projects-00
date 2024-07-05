@@ -1,0 +1,28 @@
+{% extends 'news_app/base.html'%} {% block content %}
+<div class="container">
+  <div class="content-section">
+
+
+      <h2>{{news.title}}</h2>
+      <h4>{{news.short_desc}}</h4>
+
+  {% if news.pictures %}
+      <img class="img-fluid" src={{news.pictures.url}} />
+      {% endif %}
+
+      <p></p>
+      <h2></h2>
+      <p class="description">
+        {{news.description}}
+      </p>
+
+    <hr>
+
+    <p>{{news.publisher}}</p>
+    <p>{{news.published}}</p>
+  </div>
+
+</div>
+
+
+{% endblock content %}

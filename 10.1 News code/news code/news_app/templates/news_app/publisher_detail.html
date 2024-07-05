@@ -1,0 +1,49 @@
+{% extends 'news_app/base.html' %} {% block content %}
+<section class="container-fluid text-center">
+  <h3>Latest News</h3>
+  {% for news in newslist%}
+
+  <div class="container">
+    <div class="card">
+      <a href="{% url 'news_detail' news.id%}">
+        <div class="card-header link">
+          <div class="row">
+            <div class="col-md-7">
+              <h4>{{ news.title }}</h4>
+              <h6>{{ news.short_desc }}</h6>
+            </div>
+            {% if news.pictures %}
+
+            <div class="col-md-5">
+              <img
+                src="{{news.pictures.url}}"
+                style="height: 100px; width: 100px"
+                alt="news-image"
+              />
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </a>
+      <div class="card-body text-dark">
+        <p>
+          Category: {%for cat in news.category.all %}
+          <a href="{% url 'category_detail' cat.id%}"
+            ><b><i>{{cat}}, </i></b> </a
+          >{%endfor%}
+        </p>
+        <p>
+          Published by:
+          <a href="{% url 'publisher_detail' news.publisher.id%}"
+            ><b>{{ news.publisher }}</b></a
+          >
+        </p>
+        <p>Date: {{ news.published }}</p>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  {%endfor%}
+</section>
+
+{% endblock content %}
