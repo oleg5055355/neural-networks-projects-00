@@ -1,0 +1,47 @@
+
+{% block content %}
+<h1>hello! {{name}}</h1>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+<form  method="post" enctype="multipart/form-data" action="take">
+    {% csrf_token %}
+    <input name="in" type="file"><br><br>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox1" name="sketch">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sketch/Pencil</label>
+    </div>
+
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox2" name="blur">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Blur</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox21" name="grey">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Grey Scale</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox21" name="sharp">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sharpening</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox21" name="native">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Negative Image</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="checkbox21" name="objct">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Object Tracking in the image</label>
+    </div>
+    
+    
+ <br>
+
+ 
+ <input type="submit" value="Submit" ></div>
+</form>
+<img src={{filePathName}} alt='imagename'>
+ {{filePathName}}
+
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+{% endblock%}
