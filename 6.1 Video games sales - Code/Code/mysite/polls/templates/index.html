@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+<form method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default"><h2>Name of the video game</h2></span>
+        <input name="Name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <br><hr>
+    <h3>Year of release: </h3>
+    <div class="input-group mb-3">
+        <input name="yor" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>NA Sales: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 0-42)</span>
+        <input name="NA" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>EU Sales: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 0-30)</span>
+        <input name="EU" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>JP Sales: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 0-10)</span>
+        <input name="JP" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>Critic Score: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 0-100)</span>
+        <input name="score" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>Critic Count: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 0-100)</span>
+        <input name="critic_count" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr>
+    <h3>User Count: </h3>
+    <div class="input-group mb-3">
+        <span class="input-group-text">(scale of 100-10000)</span>
+        <input name="user_count" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+    </div>
+    <br><hr> <!-- PC	PS2	PS3	X360	other_console -->
+    <h3>Console type: </h3>
+    <select name="console" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="PC">PC</option>
+        <option value="PS2">PS2</option>
+        <option value="PS3">PS3</option>
+        <option value="X360">X360</option>
+        <option value="other console">other console</option>
+    </select>
+    <br><hr> <!-- Capcom	EA	Komani	Ubisoft	other_dev -->
+    <h3>Developer : </h3>
+    <select name="dev" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="Capcom">Capcom</option>
+        <option value="EA">Electronic Arts</option>
+        <option value="Konami">Konami</option>
+        <option value="Ubisoft">Ubisoft</option>
+        <option value="other dev">Some other developer</option>
+    </select>
+    <br><hr> <!-- E	E10+	M	T	other_rating -->
+    <h3>Game Rating: </h3>
+    <select name="rate" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="E">E</option>
+        <option value="E10+">E10+</option>
+        <option value="M">M</option>
+        <option value="T">T</option>
+        <option value="other rating">Some other rating</option>
+    </select>
+    <br><hr><!-- Activision	Electronic Arts	Konami Digital Entertainment	Nintendo	Sony Computer Entertainment	Ubisoft	other_publisher -->
+    <h3>Publisher Company: </h3>
+    <select name="pub" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <option selected>Open this select menu</option>
+        <option value="Activision">Activision</option>
+        <option value="Electronic Arts">Electronic Arts</option>
+        <option value="Konami">Konami Digital Entertainment</option>
+        <option value="Nintendo">Nintendo</option>
+        <option value="Sony">Sony Computer Entertainment</option>
+        <option value="Ubisoft">Ubisoft</option>
+        <option value="other publisher">Some other Publisher</option>
+    </select>
+    <br><hr>
+    <div class="col-auto">
+        <button type="submit" name="pred_button" value="Save&Next">Confirm Submission</button>
+    </div>
+</form>
+</body>
+
+{% if result %}
+<h1>So the other_sales numbers is: {{ result }} for the scaling equivalent to (0 - 40)
+</h1>
+{% endif %}
+</html>
+
